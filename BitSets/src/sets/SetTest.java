@@ -45,7 +45,7 @@ public class SetTest {
 				scan.nextLine();
 			}
 			System.out.println("Scanning set ("+i+") is done.");
-			System.out.println("/t/t------------------------------------------");
+			System.out.println("\t\t------------------------------------------");
 		}
 		
 		int option;
@@ -56,7 +56,7 @@ public class SetTest {
 				set.printSet(i);
 			}
 			set.printSet(-1);
-			System.out.println("/t/t------------------------------------------");
+			System.out.println("\n\t\t------------------------------------------");
 			System.out.println("Choose your option:\n1- Union.\n2- Intersection.\n3- Complement.\n4- Exit.");
 			option = scan.nextInt();
 			scan.nextLine();

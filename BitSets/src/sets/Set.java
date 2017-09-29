@@ -36,8 +36,16 @@ public class Set implements ISet {
 	@Override
 	public void union(int n1, int n2) {
 		int[] array1 = new int[size], array2 = new int[size];
-		array1 = this.subsets[n1];
-		array2 = this.subsets[n2];
+		if (n1 == -1) {
+			array1 = result;
+		} else {
+			array1 = this.subsets[n1];
+		}
+		if (n2 == -1) {
+			array2 = result;
+		} else {
+			array2 = this.subsets[n2];
+		}
 		for(int i = 0; i < size; i++) {
 			result[i] = array1[i] | array2[i];
 		}
@@ -46,8 +54,16 @@ public class Set implements ISet {
 	@Override
 	public void intersection(int n1, int n2) {
 		int[] array1 = new int[size], array2 = new int[size];
-		array1 = this.subsets[n1];
-		array2 = this.subsets[n2];
+		if (n1 == -1) {
+			array1 = result;
+		} else {
+			array1 = this.subsets[n1];
+		}
+		if (n2 == -1) {
+			array2 = result;
+		} else {
+			array2 = this.subsets[n2];
+		}
 		for(int i = 0; i < size; i++) {
 			result[i] = array1[i] & array2[i];
 		}
@@ -56,7 +72,11 @@ public class Set implements ISet {
 	@Override
 	public void complement(int n) {
 		int[] array = new int[size];
-		array = this.subsets[n];
+		if (n == -1) {
+			array = result;
+		} else {
+			array = this.subsets[n];
+		}
 		for(int i = 0; i < size; i++) {
 			result[i] = ~ array[i];
 		}
